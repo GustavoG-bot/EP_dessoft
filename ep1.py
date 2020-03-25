@@ -22,6 +22,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 from random import randint 
 fichas = 1000
 #Fase Come Out 
@@ -46,7 +72,12 @@ while (fichas>0):
                 fichas = fichas - aposta 
             else: 
                 #Fase Point 
-                print ("Você passou para a fase Point!") 
+                print ("Você passou para a fase Point!")
+                primeiro_dado = randint(1,6)
+                segundo_dado = randint(1,6)
+                point = primeiro_dado+segundo_dado
+                
+
 
 
 
