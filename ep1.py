@@ -67,9 +67,10 @@ while (fichas>0):
     if apostar_ou_sair == "sair":
         break 
     else: 
-        tipo_aposta = input("Escolha o tipo da aposta, lembre-se que você pode apostar em mais de um tipo por vez . Digite apenas as siglas dos tipos e se for mais de um colocar na ordem apresentada e no formato (x_y_z_w). Tipos: Pass Line Bet (plb), Field (f), Any Craps (ac), Twelve(t): ")
+        tipo_aposta = input("Escolha o tipo da aposta, lembre-se que você pode apostar em mais de um tipo por vez . Tipos: Pass Line Bet (plb), Field (f), Any Craps (ac), Twelve(t): ")
         aposta = int(input("Quantas fichas você quer apostar: "))
-        if tipo_aposta=="plb":                        #Jogador escolhe plb.
+        #Pass line bet
+        if tipo_aposta=="plb":                        
             if soma == 7 or soma == 11:
                 print ("Você ganhou!")
                 fichas = fichas + aposta
