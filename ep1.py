@@ -70,6 +70,7 @@ while (fichas>0):
                 fichas = fichas + aposta
             elif soma == 2 or soma == 3 or soma == 12: 
                 fichas = fichas - aposta 
+                print ("Você perdeu!")
             else: 
                 #Fase Point 
                 print ("Você passou para a fase Point!") 
@@ -77,31 +78,40 @@ while (fichas>0):
                 novo_dado = randint(1,6)
                 novo_dado_2 = randint(1,6)
                 nova_soma = novo_dado+novo_dado_2
-                while  (point!=nova_soma and nova_soma != 7): 
+                while (nova_soma != point and nova_soma != 7):
                     novo_dado = randint(1,6)
                     novo_dado_2 = randint(1,6)
-                    if point == nova_soma:
-                        fichas = fichas + aposta
-                        break
-                    if nova_soma == 7: 
-                        fichas = fichas - aposta 
-                        break
+                    nova_soma = novo_dado+novo_dado_2
+                if point == nova_soma:
+                    fichas = fichas + aposta
+                    print ("Você ganhou!")
+                    break
+                elif nova_soma == 7: 
+                    fichas = fichas - aposta 
+                    print ("Você perdeu!")
+                    break
             #field
         if tipo_aposta=="f": 
             if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 fichas = fichas - aposta
+                print ("Você perdeu!")
             elif soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
                 fichas == fichas + aposta
+                print ("Você ganhou!")
             elif soma == 2:
                 fichas == fichas + 2*aposta
+                print ("Você ganhou!")
             else:
                 fichas == fichas + 3*aposta
+                print ("Você ganhou!")
             #Any Craps 
         if tipo_aposta=="ac":
             if soma == 2 or soma == 3 or soma == 12:
                 fichas = fichas + aposta*7
+                print ("Você ganhou!")
             else: 
                 fichas = fichas - aposta 
+                print ("Você perdeu!")
             #Twelve
         if tipo_aposta=="t":
             if soma == 12:
