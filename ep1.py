@@ -1,7 +1,6 @@
 #Exercício Programa – Design de Software 2020.1 - “Craps Insper”
 
 #Filippo
-
 from random import randint 
 fichas = 1000
 #Fase Come Out
@@ -82,12 +81,53 @@ while fichas>0:
         #Twelve:
         if tipo_aposta=="t":
             if soma_dados==12:
+                fichas=fichas+aposta*12
                 fichas=fichas+aposta*30
                 print("Você ganhou!")
             else:
                 fichas=fichas-aposta
                 print("Você perdeu!")
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -147,10 +187,8 @@ while fichas>0:
 
 # Gustavo
 nome = input("Digite seu nome caro padawan: ")
-print ("{0},seja bem-vindo ao Quarentena's Vegas Licit (not so much) House!".format(nome))
+print ("{0}, seja bem-vindo ao Quarentena's Vegas Licit (not so much) House!".format(nome))
 print ("Nesse jogo você ganha ou perde! É simples!")
-
-#Gustavo
 from random import randint 
 fichas = 1000
 #Fase Come Out 
@@ -159,9 +197,9 @@ while (fichas>0):
     primeiro_dado = randint(1,6)
     segundo_dado = randint(1,6)
     soma = primeiro_dado+segundo_dado
-    print ("{0},você está com {1} fichas!".format(nome,fichas))
+    print ("{0}, você está com {1} fichas!".format(nome,fichas))
     print ("Você está na fase Come Out! ")
-    apostar_ou_sair = input("{0},você deseja apostar ou sair?: ".format(nome))
+    apostar_ou_sair = input("{0}, você deseja apostar ou sair?: ".format(nome))
     if apostar_ou_sair == "sair":
         break 
     else: 
@@ -251,4 +289,3 @@ while (fichas>0):
                 print ("Mas que ganancioso {0}! Claro que perdeu! A soma não deu 12!".format(nome))
                 print ("O jogo será reiniciado!")
                 fichas = fichas - aposta 
-                fichas = fichas - aposta
