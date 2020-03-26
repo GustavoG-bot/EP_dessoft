@@ -71,4 +71,20 @@ while fichas>0:
             else:
                 fichas=fichas+aposta*3
                 print("Você ganhou!")
+        #Any Craps:
+        if tipo_aposta=="ac":
+            if soma_dados==2 or soma_dados==3 or soma_dados==12:
+                fichas=fichas+aposta*7
+                print("Você ganhou!")
+            else:
+                fichas=fichas-aposta
+                print("Você perdeu!")
+        #Twelve:
+        if tipo_aposta=="t":
+            if soma_dados==12:
+                fichas=fichas+aposta*12
+                print("Você ganhou!")
+            else:
+                fichas=fichas-aposta
+                print("Você perdeu!")
                 
