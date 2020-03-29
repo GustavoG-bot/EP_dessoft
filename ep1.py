@@ -1,4 +1,7 @@
-#Exercício Programa – Design de Software 2020.1 - “Craps Insper”
+#Exercício Programa – Design de Software 2020.1 - “Craps Insper” - Gustavo Guedes e Filippo Ferraro.
+#Professor, eu e o Filippo fizemos separadamente dois códigos para aprendermos como funciona o jogo e os comandos
+#Assim, verifique os vários commits que realizamos para provar que não foi somente um aluno que realizou todo o código
+
 
 #Filippo
 nome=input("Qual seu nome?")
@@ -28,7 +31,7 @@ while fichas>0:
             elif soma_dados== 2 or soma_dados== 3 or soma_dados==12:
                 fichas=fichas-aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
             else:
                 #Fase Point
                 print("Você passou para a fase Point!Novos dados serão sorteados.")
@@ -44,7 +47,7 @@ while fichas>0:
                 elif nova_soma==7:
                     fichas=fichas-aposta
                     print("A soma dos dados novos foi {0}.".format(nova_soma))
-                    print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                    print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                 else:
                     quinto_dado=randint(1,6)
                     sexto_dado=randint(1,6)
@@ -63,7 +66,7 @@ while fichas>0:
                         elif nova_soma==7:
                             fichas=fichas-aposta
                             print("A soma dos dados novos foi {0}.".format(outra_soma))
-                            print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                            print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                             a=1
                         else:
                             a!=1
@@ -72,7 +75,7 @@ while fichas>0:
             if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
                 fichas=fichas-aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
             elif soma_dados==3 or soma_dados==4 or soma_dados==9 or soma_dados==10 or soma_dados==11:
                 fichas=fichas+aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
@@ -95,7 +98,7 @@ while fichas>0:
             else:
                 fichas=fichas-aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
         #Twelve:
         if tipo_aposta=="t":
             if soma_dados==12:
@@ -106,61 +109,8 @@ while fichas>0:
             else:
                 fichas=fichas-aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".fomat(nome))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
