@@ -9,8 +9,8 @@ print("Bem vindo ao Craps Insper {0}!".format(nome))
 print("Nesse jogo você ganha ou perde! É simples!")
 from random import randint 
 fichas = 1000
-#Fase Come Out
 while fichas>0:
+    #Fase Come Out
     primeiro_dado=randint(1,6)
     segundo_dado=randint(1,6)
     soma_dados=primeiro_dado + segundo_dado 
@@ -110,8 +110,9 @@ while fichas>0:
                 fichas=fichas-aposta
                 print("A soma dos dados foi {0}.".format(soma_dados))
                 print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+if fichas==0:
+    print("Infelismente acabaram suas fichas {0}, até a próxima.".format(nome))
                 
-
 
 
 
