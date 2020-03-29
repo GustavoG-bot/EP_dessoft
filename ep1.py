@@ -1,4 +1,7 @@
-#Exercício Programa – Design de Software 2020.1 - “Craps Insper”
+#Exercício Programa – Design de Software 2020.1 - “Craps Insper” - Gustavo Guedes e Filippo Ferraro.
+#Professor, eu e o Filippo fizemos separadamente dois códigos para aprendermos como funciona o jogo e os comandos
+#Assim, verifique os vários commits que realizamos para provar que não foi somente um aluno que realizou todo o código
+
 
 #Filippo
 nome=input("Qual seu nome?")
@@ -108,59 +111,6 @@ while fichas>0:
                 print("A soma dos dados foi {0}.".format(soma_dados))
                 print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
