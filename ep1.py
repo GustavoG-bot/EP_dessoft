@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 #Exercício Programa – Design de Software 2020.1 - “Craps Insper” - Gustavo Guedes e Filippo Ferraro.
 #Professor, eu e o Filippo fizemos separadamente dois códigos para aprendermos como funciona o jogo e os comandos
@@ -7,11 +8,21 @@
 
 #Código 1
 """
+=======
+#Exercício Programa – Design de Software 2020.1 - “Craps Insper” - Gustavo Guedes e Filippo Ferraro.
+#Professor, eu e o Filippo fizemos separadamente dois códigos para aprendermos como funciona o jogo e os comandos
+#Assim, verifique os vários commits que realizamos para provar que não foi somente um aluno que realizou todo o código
+
+
+#Filippo
+nome=input("Qual seu nome?")
+print("Bem vindo ao Craps Insper {0}!".format(nome))
+print("Nesse jogo você ganha ou perde! É simples!")
+>>>>>>> e5943a9f9c6df07f42134e49f3314a325ad4c386
 from random import randint 
 fichas = 1000
-#Fase Come Out
 while fichas>0:
-    print ("Você está na fase Come Out")
+    #Fase Come Out
     primeiro_dado=randint(1,6)
     segundo_dado=randint(1,6)
     soma_dados=primeiro_dado + segundo_dado 
@@ -20,28 +31,35 @@ while fichas>0:
     if apostar_ou_sair=="sair":
         break
     else:
-        tipo_aposta=input("Escolha seu tipo de aposta. Lembre-se que você pode apostar em mais de um tipo por vez. Digite apenas as siglas dos tipos e se escolher mais de um, colocar na ordem apresentada e no formato(x_y_z). Tipos: Pass Line Bet(plb), Field(f), Any Craps(ac) e Twelve(t)")
+        print ("Você está na fase Come Out.")
+        tipo_aposta=input("Escolha seu tipo de aposta: Pass Line Bet(plb), Field(f), Any Craps(ac) ou Twelve(t)")
         aposta=int(input("Quantas fichas você deseja apostar?"))
         #Pass line bet:
         if tipo_aposta=="plb":
             if soma_dados== 7 or soma_dados == 11:
                 fichas=fichas+aposta 
-                print("Você ganhou!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
             elif soma_dados== 2 or soma_dados== 3 or soma_dados==12:
                 fichas=fichas-aposta
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
             else:
                 #Fase Point
-                print("Você passou para a fase Point!")
+                print("Você passou para a fase Point!Novos dados serão sorteados.")
                 point=primeiro_dado + segundo_dado
                 terceiro_dado=randint(1,6)
                 quarto_dado=randint(1,6)
                 nova_soma=terceiro_dado+quarto_dado
+                print("O point é {0}.".format(point))
                 if point==nova_soma:
                     fichas=fichas+aposta
-                    print("Você ganhou!")
+                    print("A soma dos dados novos foi igual ao point.")
+                    print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
                 elif nova_soma==7:
                     fichas=fichas-aposta
-                    print("Você perdeu!")
+                    print("A soma dos dados novos foi {0}.".format(nova_soma))
+                    print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                 else:
                     quinto_dado=randint(1,6)
                     sexto_dado=randint(1,6)
@@ -54,11 +72,13 @@ while fichas>0:
                         a=0
                         if outra_soma==point:
                             fichas=fichas+aposta
-                            print("Você ganhou!")
+                            print("A soma dos dados novos foi igual ao point.")
+                            print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
                             a=1
                         elif nova_soma==7:
                             fichas=fichas-aposta
-                            print("Voê perdeu!")
+                            print("A soma dos dados novos foi {0}.".format(outra_soma))
+                            print("Que pena {0}, você perdeu! Tente novamente".format(nome))
                             a=1
                         else:
                             a!=1
@@ -66,32 +86,41 @@ while fichas>0:
         if tipo_aposta=="f":
             if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
                 fichas=fichas-aposta
-                print("Você perdeu!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
             elif soma_dados==3 or soma_dados==4 or soma_dados==9 or soma_dados==10 or soma_dados==11:
                 fichas=fichas+aposta
-                print("Você ganhou!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
             elif soma_dados==2:
                 fichas=fichas+aposta*2
-                print("Você ganhou!")
-            else:
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+            elif soma_dados==12:
                 fichas=fichas+aposta*3
-                print("Você ganhou!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+
         #Any Craps:
         if tipo_aposta=="ac":
             if soma_dados==2 or soma_dados==3 or soma_dados==12:
                 fichas=fichas+aposta*7
-                print("Você ganhou!")
+                print("A soma dos dados foi {0}}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
             else:
                 fichas=fichas-aposta
-                print("Você perdeu!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
         #Twelve:
         if tipo_aposta=="t":
             if soma_dados==12:
                 fichas=fichas+aposta*12
                 fichas=fichas+aposta*30
-                print("Você ganhou!")
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
             else:
                 fichas=fichas-aposta
+<<<<<<< HEAD
                 print("Você perdeu!")
 """
 
@@ -99,6 +128,17 @@ while fichas>0:
 
 
 #Código 2 Gustavo e Fillipo OFICIAL - Craps INSPER
+=======
+                print("A soma dos dados foi {0}.".format(soma_dados))
+                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+if fichas==0:
+    print("Infelismente acabaram suas fichas {0}, até a próxima.".format(nome))
+                
+
+
+
+# Gustavo
+>>>>>>> e5943a9f9c6df07f42134e49f3314a325ad4c386
 nome = input("Digite seu nome caro padawan: ")
 print ("{0}, seja bem-vindo ao Quarentena's Vegas Licit (not so much) House!".format(nome))
 print ("Nesse jogo você ganha ou perde! É simples!")
