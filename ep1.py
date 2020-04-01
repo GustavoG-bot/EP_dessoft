@@ -6,9 +6,12 @@
 #alunos para sedimentar a matéria. Obrigado pela compreensão!
 
 #Código 1
-"""
+
 from random import randint 
 fichas = 1000
+continuar=0
+nome=input("Qual seu nome?")
+print("Bem vindo ao Craps Insper!".format(nome))
 while fichas>0:
     #Fase Come Out
     primeiro_dado=randint(1,6)
@@ -20,34 +23,44 @@ while fichas>0:
         break
     else:
         print ("Você está na fase Come Out.")
-        tipo_aposta=input("Escolha seu tipo de aposta: Pass Line Bet(plb), Field(f), Any Craps(ac) ou Twelve(t)")
-        aposta=int(input("Quantas fichas você deseja apostar?"))
+        while not continuar:
+            tipo_aposta=input("Escolha seu tipo de aposta: Pass Line Bet(plb), Field(f), Any Craps(ac) ou Twelve(t). Ou jogar os dados (jogar).")
+            if tipo_aposta=="plb":
+                aposta_plb=int(input("Quantas fichas você deseja apostar?"))
+            if tipo_aposta=="f":
+                aposta_f=int(input("Quantas fichas você deseja apostar?"))
+            if tipo_aposta=="ac":
+                aposta_ac=int(input("Quantas fichas você deseja apostar?"))
+            if tipo_aposta=="t":
+                aposta_t=int(input("Quantas fichas você deseja apostar?"))
+            if tipo_aposta=="jogar":
+                continuar=True
         #Pass line bet:
-        if tipo_aposta=="plb":
+        if aposta_plb>0:
             if soma_dados== 7 or soma_dados == 11:
-                fichas=fichas+aposta 
+                fichas=fichas+aposta_plb
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                print("Parabéns {0}, você ganhou o Pass Line Bet! Continue jogando.".format(nome))
             elif soma_dados== 2 or soma_dados== 3 or soma_dados==12:
-                fichas=fichas-aposta
+                fichas=fichas-aposta_plb
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+                print("Que pena {0}, você perdeu o Pass Line Bet! Tente novamente".format(nome))
             else:
                 #Fase Point
-                print("Você passou para a fase Point!Novos dados serão sorteados.")
+                print("Você passou para a fase Point! Novos dados serão sorteados.")
                 point=primeiro_dado + segundo_dado
                 terceiro_dado=randint(1,6)
                 quarto_dado=randint(1,6)
                 nova_soma=terceiro_dado+quarto_dado
                 print("O point é {0}.".format(point))
                 if point==nova_soma:
-                    fichas=fichas+aposta
+                    fichas=fichas+aposta_plb
                     print("A soma dos dados novos foi igual ao point.")
-                    print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                    print("Parabéns {0}, você ganhou o Pass Line Bet na fase Point! Continue jogando.".format(nome))
                 elif nova_soma==7:
-                    fichas=fichas-aposta
+                    fichas=fichas-aposta_plb
                     print("A soma dos dados novos foi {0}.".format(nova_soma))
-                    print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+                    print("Que pena {0}, você perdeu o Pass Line Bet na fase Point! Tente novamente".format(nome))
                 else:
                     quinto_dado=randint(1,6)
                     sexto_dado=randint(1,6)
@@ -59,60 +72,55 @@ while fichas>0:
                         outra_soma=quinto_dado+sexto_dado
                         a=0
                         if outra_soma==point:
-                            fichas=fichas+aposta
+                            fichas=fichas+aposta_plb
                             print("A soma dos dados novos foi igual ao point.")
-                            print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                            print("Parabéns {0}, você ganhou o Pass Line Bet na fase Point! Continue jogando.".format(nome))
                             a=1
                         elif nova_soma==7:
-                            fichas=fichas-aposta
+                            fichas=fichas-aposta_plb
                             print("A soma dos dados novos foi {0}.".format(outra_soma))
-                            print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+                            print("Que pena {0}, você perdeu o Pass Line Bet na fase Point! Tente novamente".format(nome))
                             a=1
                         else:
                             a!=1
         #Field:
-        if tipo_aposta=="f":
+        if aposta_f>0:
             if soma_dados==5 or soma_dados==6 or soma_dados==7 or soma_dados==8:
-                fichas=fichas-aposta
+                fichas=fichas-aposta_f
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+                print("Que pena {0}, você perdeu o Field! Tente novamente".format(nome))
             elif soma_dados==3 or soma_dados==4 or soma_dados==9 or soma_dados==10 or soma_dados==11:
-                fichas=fichas+aposta
+                fichas=fichas+aposta_f
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                print("Parabéns {0}, você ganhou o Field! Continue jogando.".format(nome))
             elif soma_dados==2:
-                fichas=fichas+aposta*2
+                fichas=fichas+aposta_f*2
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                print("Parabéns {0}, você ganhou o Field! Continue jogando.".format(nome))
             elif soma_dados==12:
-                fichas=fichas+aposta*3
+                fichas=fichas+aposta_f*3
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
-
+                print("Parabéns {0}, você ganhou o Field! Continue jogando.".format(nome))
         #Any Craps:
-        if tipo_aposta=="ac":
+        if aposta_ac>0:
             if soma_dados==2 or soma_dados==3 or soma_dados==12:
-                fichas=fichas+aposta*7
+                fichas=fichas+aposta_ac*7
                 print("A soma dos dados foi {0}}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                print("Parabéns {0}, você ganhou o Any Craps! Continue jogando.".format(nome))
             else:
-                fichas=fichas-aposta
+                fichas=fichas-aposta_ac
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Que pena {0}, você perdeu! Tente novamente".format(nome))
+                print("Que pena {0}, você perdeu Any Craps! Tente novamente".format(nome))
         #Twelve:
-        if tipo_aposta=="t":
+        if aposta_t>0:
             if soma_dados==12:
-                fichas=fichas+aposta*12
-                fichas=fichas+aposta*30
+                fichas=fichas+aposta_t*12
+                fichas=fichas+aposta_t*30
                 print("A soma dos dados foi {0}.".format(soma_dados))
-                print("Parabéns {0}, você ganhou! Continue jogando.".format(nome))
+                print("Parabéns {0}, você ganhou o Twelve! Continue jogando.".format(nome))
             else:
-                fichas=fichas-aposta
-                print("Você perdeu!")
-"""
-
-
-
+                fichas=fichas-aposta_t
+                print("Que pena {0}, você perdeu o Twelve! Tente novamente".format(nome))
 
 #Código 2 Gustavo e Fillipo OFICIAL - Craps INSPER
 nome = input("Digite seu nome caro padawan: ")
