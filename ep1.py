@@ -1,6 +1,12 @@
-#Exercício Programa – Design de Software 2020.1 - “Craps Insper”
 
-#Filippo
+#Exercício Programa – Design de Software 2020.1 - “Craps Insper” - Gustavo Guedes e Filippo Ferraro.
+#Professor, eu e o Filippo fizemos separadamente dois códigos para aprendermos como funciona o jogo e os comandos
+#Assim, verifique os vários commits que realizamos para provar que não foi somente um aluno que realizou todo o código
+#Para fins de avaliação considere o código que começa na linha 101. O código abaixo é fruto de um mero esforço dos
+#alunos para sedimentar a matéria. Obrigado!
+
+#Código 1
+"""
 from random import randint 
 fichas = 1000
 #Fase Come Out
@@ -87,105 +93,12 @@ while fichas>0:
             else:
                 fichas=fichas-aposta
                 print("Você perdeu!")
+"""
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Gustavo
+#Código 2 Gustavo e Fillipo OFICIAL - Craps INSPER
 nome = input("Digite seu nome caro padawan: ")
 print ("{0}, seja bem-vindo ao Quarentena's Vegas Licit (not so much) House!".format(nome))
 print ("Nesse jogo você ganha ou perde! É simples!")
@@ -288,4 +201,6 @@ while (fichas>0):
                 print ("A soma é {0} ".format(soma))
                 print ("Mas que ganancioso {0}! Claro que perdeu! A soma não deu 12!".format(nome))
                 print ("O jogo será reiniciado!")
-                fichas = fichas - aposta 
+                fichas = fichas - aposta
+if fichas == 0:
+    print ("Que pena {0}! Você torrou suas fichas! O jogo acabou!".format(nome)) 
