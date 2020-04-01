@@ -151,10 +151,10 @@ while (fichas>0):
         break 
     else:
         while apostar_ou_sair == "apostar":
-            tipo_aposta = input("Por favor, digite o nome de todas as apostas separadamente (plb,ac,tw,f) e depois digite o valor da aposta: ")
+            tipo_aposta = input("Por favor, digite o nome de todas as apostas separadamente (plb,ac,tw,f) e depois digite o valor da aposta. Quando terminar digite jogar dados: ")
             print ("Atenção: Todos os tipos devem receber valores! Caso não queria apostar no tipo aposte 0 fichas")
             if tipo_aposta == "plb":
-                passline = int(input("Quantas fichas você quer apostar no pass line bet: ")) 
+                passline = int(input("Quantas fichas você quer apostar no Pass Line Bet: ")) 
             if tipo_aposta == "ac":
                 anycraps = int(input("Quantas fichas você quer apostar no AnyCraps: "))
             if tipo_aposta == "tw":
@@ -167,13 +167,13 @@ while (fichas>0):
         if passline > 0:                       
             if soma == 7 and passline>0 or soma == 11:
                 print ("A soma é {0} ".format(soma))
-                print ("Você ganhou! A soma foi igual a 7 ou 11!")
+                print ("Você ganhou no Pass Line Bet! A soma foi igual a 7 ou 11!")
                 print ("O jogo será reiniciado!")
                 fichas = fichas + passline
             elif soma == 2 or soma == 3 or soma == 12: 
                 fichas = fichas - passline 
                 print ("A soma é {0} ".format(soma))
-                print ("Você perdeu! A soma foi igual a 2,3 ou 12!")
+                print ("Você perdeu no Pass Line Bet! A soma foi igual a 2,3 ou 12!")
                 print ("O jogo será reiniciado!")
             else: 
         #Fase Point 
@@ -192,13 +192,13 @@ while (fichas>0):
                         fichas = fichas + passline
                         print ("O point é {0} ".format(point))
                         print ("A nova soma é {0} ".format(nova_soma))
-                        print ("Você ganhou! A soma point foi igual ao dos novos dados!")
+                        print ("Você ganhou no Pass Line Bet! A soma point foi igual ao dos novos dados!")
                         print ("O jogo será reiniciado!")
                         a=1
                     elif nova_soma == 7: 
                         fichas = fichas - passline 
                         print ("A nova soma é {0} ".format(nova_soma))
-                        print ("Você perdeu! A nova soma deu 7!")
+                        print ("Você perdeu no Pass Line Bet! A nova soma deu 7!")
                         print ("O jogo será reiniciado!")
                         a = 1
     #Field
@@ -206,45 +206,45 @@ while (fichas>0):
             if soma == 5 and fields >0 or soma == 6 and fields >0 or soma == 7 and fields >0 or soma == 8 and fields >0:
                 fichas = fichas - fields
                 print ("A soma é {0} ".format(soma))
-                print ("Você perdeu! A soma foi igual a 5,6,7 ou 8!")
+                print ("Você perdeu no Fields! A soma foi igual a 5,6,7 ou 8!")
                 print ("O jogo será reiniciado!")
             elif soma == 3 or soma == 4 or soma == 9 or soma == 10 or soma == 11:
                 fichas = fichas + fields
                 print ("A soma é {0} ".format(soma))
-                print ("Você ganhou! A soma foi igual a 3,4,9,10 ou 11!")
+                print ("Você ganhou no Fields! A soma foi igual a 3,4,9,10 ou 11!")
                 print ("O jogo será reiniciado!")
             elif soma == 2:
                 fichas = fichas + 2*fields
                 print ("A soma é {0} ".format(soma))
-                print ("Você ganhou! A soma foi igual a 2! Que sortudo!")
+                print ("Você ganhou no Fields! A soma foi igual a 2! Que sortudo!")
                 print ("O jogo será reiniciado!")
             else:
                 fichas = fichas + 3*fields
                 print ("A soma é {0} ".format(soma))
-                print ("Você ganhou! A soma foi igual a 12! UAU!")
+                print ("Você ganhou no Fields! A soma foi igual a 12! UAU!")
                 print ("O jogo será reiniciado!")
     #Any Craps 
     if anycraps > 0:
             if soma == 2 or soma == 3 or soma == 12:
                 fichas = fichas + anycraps*7
                 print ("A soma é {0} ".format(soma))
-                print ("Você ganhou! A soma foi igual a 2,3 ou 12! Ta com sorte! Joga mais muahahah!")
+                print ("Você ganhou no AnyCraps! A soma foi igual a 2,3 ou 12! Ta com sorte! Joga mais muahahah!")
                 print ("O jogo será reiniciado!")
             else: 
                 fichas = fichas - anycraps
                 print ("A soma é {0} ".format(soma))
-                print ("Você perdeu! Quem mandou você jogar mais em! Quem avisa amigo é!")
+                print ("Você perdeu no AnyCraps! Quem mandou você jogar mais em! Quem avisa amigo é!")
                 print ("O jogo será reiniciado!")
     #Twelve
     if twelve > 0:
         if soma == 12:
             print ("A soma é {0} ".format(soma))
-            print ("Você ganhou! A soma foi igual a 12! Sorte de principiante {0}".format(nome))
+            print ("Você ganhou Twelve! A soma foi igual a 12! Sorte de principiante {0}".format(nome))
             print ("O jogo será reiniciado!")
             fichas = fichas + twelve*30
         else:
             print ("A soma é {0} ".format(soma))
-            print ("Mas que ganancioso {0}! Claro que perdeu! A soma não deu 12!".format(nome))
+            print ("Mas que ganancioso {0}! Claro que perdeu no Twelve! A soma não deu 12!".format(nome))
             print ("O jogo será reiniciado!")
             fichas = fichas - twelve
 if fichas == 0:
