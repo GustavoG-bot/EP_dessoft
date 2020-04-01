@@ -121,6 +121,8 @@ while fichas>0:
             else:
                 fichas=fichas-aposta_t
                 print("Que pena {0}, você perdeu o Twelve! Tente novamente".format(nome))
+if fichas==0:
+    print("Infelizmente suas fichas acabaram {0}. Até a próxima.".format(nome))
 
 
 
