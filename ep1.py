@@ -114,6 +114,24 @@ while fichas>0:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Código 2 Gustavo e Fillipo OFICIAL - Craps INSPER
 nome = input("Digite seu nome caro padawan: ")
 print ("{0}, seja bem-vindo ao Quarentena's Vegas Licit (not so much) House!".format(nome))
