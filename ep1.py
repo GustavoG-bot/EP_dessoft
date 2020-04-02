@@ -6,7 +6,7 @@
 #alunos para sedimentar a matéria. Obrigado pela compreensão!
 
 #Código 1
-
+"""
 from random import randint 
 fichas = 1000
 continuar=0
@@ -123,7 +123,7 @@ while fichas>0:
                 print("Que pena {0}, você perdeu o Twelve! Tente novamente".format(nome))
 if fichas==0:
     print("Infelizmente suas fichas acabaram {0}. Até a próxima.".format(nome))
-
+"""
 
 
 
