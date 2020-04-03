@@ -259,3 +259,7 @@ while (fichas>0):
             fichas = fichas - twelve
 if fichas == 0:
     print ("Que pena {0}! Você torrou suas fichas! O jogo acabou!".format(nome)) 
+
+
+
+   
