@@ -6,7 +6,7 @@
 #alunos para sedimentar a matéria. Obrigado pela compreensão!
 
 #Código 1
-
+"""
 from random import randint 
 fichas = 1000
 continuar=0
@@ -123,7 +123,7 @@ while fichas>0:
                 print("Que pena {0}, você perdeu o Twelve! Tente novamente".format(nome))
 if fichas==0:
     print("Infelizmente suas fichas acabaram {0}. Até a próxima.".format(nome))
-
+"""
 
 
 
@@ -175,7 +175,7 @@ while (fichas>0):
                 break
         #Pass line bet
         if passline > 0:                       
-            if soma == 7 and passline>0 or soma == 11:
+            if soma == 7 or soma == 11:
                 print ("A soma é {0} ".format(soma))
                 print ("Você ganhou no Pass Line Bet! A soma foi igual a 7 ou 11!")
                 print ("O jogo será reiniciado!")
@@ -213,7 +213,7 @@ while (fichas>0):
                         a = 1
     #Field
         if fields > 0:
-            if soma == 5 and fields >0 or soma == 6 and fields >0 or soma == 7 and fields >0 or soma == 8 and fields >0:
+            if soma == 5 or soma == 6 or soma == 7 or soma == 8:
                 fichas = fichas - fields
                 print ("A soma é {0} ".format(soma))
                 print ("Você perdeu no Fields! A soma foi igual a 5,6,7 ou 8!")
@@ -234,7 +234,7 @@ while (fichas>0):
                 print ("Você ganhou no Fields! A soma foi igual a 12! UAU!")
                 print ("O jogo será reiniciado!")
     #Any Craps 
-    if anycraps > 0:
+        if anycraps > 0:
             if soma == 2 or soma == 3 or soma == 12:
                 fichas = fichas + anycraps*7
                 print ("A soma é {0} ".format(soma))
@@ -246,17 +246,17 @@ while (fichas>0):
                 print ("Você perdeu no AnyCraps! Quem mandou você jogar mais em! Quem avisa amigo é!")
                 print ("O jogo será reiniciado!")
     #Twelve
-    if twelve > 0:
-        if soma == 12:
-            print ("A soma é {0} ".format(soma))
-            print ("Você ganhou Twelve! A soma foi igual a 12! Sorte de principiante {0}".format(nome))
-            print ("O jogo será reiniciado!")
-            fichas = fichas + twelve*30
-        else:
-            print ("A soma é {0} ".format(soma))
-            print ("Mas que ganancioso {0}! Claro que perdeu no Twelve! A soma não deu 12!".format(nome))
-            print ("O jogo será reiniciado!")
-            fichas = fichas - twelve
+        if twelve > 0:
+            if soma == 12:
+                print ("A soma é {0} ".format(soma))
+                print ("Você ganhou Twelve! A soma foi igual a 12! Sorte de principiante {0}".format(nome))
+                print ("O jogo será reiniciado!")
+                fichas = fichas + twelve*30
+            else:
+                print ("A soma é {0} ".format(soma))
+                print ("Mas que ganancioso {0}! Claro que perdeu no Twelve! A soma não deu 12!".format(nome))
+                print ("O jogo será reiniciado!")
+                fichas = fichas - twelve
 if fichas == 0:
     print ("Que pena {0}! Você torrou suas fichas! O jogo acabou!".format(nome)) 
 
